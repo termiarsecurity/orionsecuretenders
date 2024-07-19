@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>TermiAr Security</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Custom CSS for background, animations, and transitions -->
+    <style>
+        body {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(173, 216, 230, 0.5) 100%), url('4.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            padding-top: 56px; /* Adjust for fixed navbar height */
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .navbar {
+            background-color: rgba(0, 123, 255, 0.8);
+            transition: background-color 0.5s ease;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar-brand img {
+            height: 40px; /* Reduced size */
+            transition: transform 0.5s ease;
+        }
+        .navbar-brand img:hover {
+            transform: scale(1.1);
+        }
+        .nav-link {
+            font-weight: 500;
+            color: #080808 !important; /* Fixed color */
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #0f0e0e !important;
+            transform: scale(1.1);
+        }
+        .search-form {
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .search-form:hover {
+            transform: scale(1.05);
+        }
+        .search-input {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            margin-right: -1px;
+            font-weight: 500;
+        }
+        .search-btn {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            background-color: #007bff;
+            color: #fff;
+            border-color: #007bff;
+            transition: background-color 0.3s ease;
+            font-weight: 500;
+        }
+        .search-btn:hover {
+            background-color: #0056b3;
+        }
+        .dropdown-menu {
+            font-weight: 500;
+            background-color: rgba(0, 123, 255, 0.9);
+            color: #fff;
+        }
+        .dropdown-item:hover {
+            background-color: #0056b3;
+        }
+        .tab-content {
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .container, .nav-tabs {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 10px;
+        }
+        .tab-pane {
+            padding-top: 20px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            border-radius: 10px;
+        }
+        .navbar-toggler-icon {
+            transition: transform 0.5s ease;
+        }
+        .navbar-toggler:hover .navbar-toggler-icon {
+            transform: rotate(90deg);
+        }
+        .nav-item, .search-form {
+            animation: popIn 1s ease-in-out;
+        }
+        @keyframes popIn {
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        .marquee {
+            margin: 0;
+            padding: 10px 0;
+            background-color: rgba(255, 0, 0, 0.8);
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Check if user is logged in and redirect to login page if not -->
+    <!-- <script>
+        if (localStorage.getItem('loggedIn') !== 'true') {
+            window.location.href = 'login.html';
+        }
+    </script> -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark glass-effect">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="https://orionsecure.co.in/" target="_blank">
+                <img src="3.png" alt="TERMIAR Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://orionsecure.co.in/index.html">𝐇𝐎𝐌𝐄</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://t.me/termiarsecurity">𝐓𝐄𝐑𝐌𝐈𝐀𝐑 𝐒𝐄𝐂𝐔𝐑𝐈𝐓𝐘</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://orionsecure.co.in/about-us.html">𝐀𝐁𝐎𝐔𝐓 𝐔𝐒</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://orionsecure.co.in/connect-with-us.html">𝐂𝐎𝐍𝐓𝐀𝐂𝐓 𝐔𝐒</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://orionsecure.co.in/Security-services.html#">𝐒𝐄𝐑𝐕𝐈𝐂𝐄𝐒</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="activetender.html">𝐀𝐂𝐓𝐈𝐕𝐄 𝐓𝐄𝐍𝐃𝐄𝐑</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0 search-form" id="search-form">
+                    <input class="form-control mr-sm-2 search-input" id="search-input" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-custom my-2 my-sm-0 search-btn" type="submit">
+                        <i class="fas fa-search"></i> Search
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <marquee class="marquee" style="padding-top: 5%;">𝕋𝕒𝕡 𝔸ℂ𝕋𝕀𝕍𝔼 𝕋𝔼ℕ𝔻𝔼ℝ𝕊 𝕥𝕒𝕓 𝕥𝕠 𝕤𝕖𝕖 𝕃𝕚𝕧𝕖 𝕋𝕖𝕟𝕕𝕖𝕣𝕤</marquee>
+
+    <div class="container mt-4 glass-effect" style="padding-top: 5%;">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="local-tab" data-toggle="tab" href="#local" role="tab" aria-controls="local" aria-selected="true">TENDER</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="global-tab" data-toggle="tab" href="#global" role="tab" aria-controls="global" aria-selected="false">COUNCILS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="schemes-tab" data-toggle="tab" href="#schemes" role="tab" aria-controls="schemes" aria-selected="false">SCHEMES</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="local" role="tabpanel" aria-labelledby="local-tab">
+                <iframe src="state.html"></iframe>
+            </div>
+            <div class="tab-pane fade" id="global" role="tabpanel" aria-labelledby="global-tab">
+                <iframe src="global.html"></iframe>
+            </div>
+            <div class="tab-pane fade" id="schemes" role="tabpanel" aria-labelledby="schemes-tab">
+                <iframe src="schemes.html"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Google Custom Search Engine -->
+    <script>
+        (function() {
+            var cx = 'YOUR_CUSTOM_SEARCH_ENGINE_ID'; // Replace with your Google CSE ID
+            var gcse = document.createElement('script');
+            gcse.type = 'text/javascript';
+            gcse.async = true;
+            gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(gcse, s);
+        })();
+    </script>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            // Add animations using animate.css classes
+            $('.navbar').addClass('animate__animated animate__fadeInDown');
+            $('.search-form').addClass('animate__animated animate__fadeInRight');
+
+            // Add animations to tabs
+            $('#myTab a').on('shown.bs.tab', function (e) {
+                var target = $(e.target).attr("href");
+                $(target).find('iframe').addClass('animate__animated animate__fadeInUp');
+            });
+
+            // Google Custom Search handling
+            $('#search-form').submit(function(event) {
+                event.preventDefault();
+                var query = $('#search-input').val();
+                var searchUrl = 'https://www.google.com/search?q=' + encodeURIComponent(query);
+                window.open(searchUrl, '_blank');
+            });
+        });
+    </script>
+</body>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <p>&copy; 2012 Orion Secure. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-right">
+                <p>Designed by <a href="https://wa.me/+917068143049" target="_blank">TermiAr 
+                    
+                </a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</html>

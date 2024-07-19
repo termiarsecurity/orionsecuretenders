@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SECTOR SKILL COUNCIL</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Custom CSS for background image and animations -->
+    <style>
+        body {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 192, 203, 0.5) 100%), url('4.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #000;
+            font-family: 'Arial', 'Helvetica', sans-serif;
+            position: relative; /* Ensure positioning context for absolute elements */
+        }
+        .navbar {
+            background-color: transparent; /* Transparent navbar background */
+            transition: background-color 0.3s ease;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+        .navbar-brand img {
+            height: 40px;
+        }
+        .search-form {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .search-form:hover {
+            transform: scale(1.2); /* Scale up on hover for a more pronounced animation */
+        }
+        .search-input {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            margin-right: -1px; /* Align input and button borders */
+            font-weight: bold;
+        }
+        .search-btn {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            background-color: #28a745; /* Button background color */
+            color: #fff; /* Button text color */
+            border-color: #28a745; /* Button border color */
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+        .search-btn:hover {
+            background-color: #218838; /* Button hover background color */
+        }
+        .nav-link {
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #fff; /* Hover color for navigation links */
+        }
+        /* Animation classes */
+        .animate__animated {
+            animation-duration: 1s;
+            animation-fill-mode: both;
+        }
+        .animate__fadeIn {
+            opacity: 0;
+        }
+        .animate__fadeIn.animate__delay-1s {
+            animation-delay: 1s;
+        }
+        .animate__fadeIn.animate__delay-2s {
+            animation-delay: 2s;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="https://orionsecure.co.in/">
+            <img src="3.png" alt="TERMIAR Logo">
+        </a>
+    </div>
+</nav>
+
+<!-- Search Form -->
+<form class="form-inline my-2 my-lg-0 search-form">
+    <input class="form-control mr-sm-2 search-input" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-success my-2 my-sm-0 search-btn" type="submit">
+        <i class="fas fa-search"></i>
+    </button>
+</form>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Animate.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+<script>
+    $(document).ready(function() {
+        // Add animations using animate.css classes
+        $('.navbar').addClass('animate__animated animate__fadeIn');
+
+        // Optional delay for animations
+        $('.navbar').addClass('animate__delay-1s');
+    });
+</script>
+
+</body>
+</html>

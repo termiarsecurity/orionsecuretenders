@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Active Tenders</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Custom CSS for background, animations, and transitions -->
+    <style>
+        body {
+            background: linear-gradient(135deg, rgba(0, 0, 50, 0.8) 0%, rgba(0, 0, 80, 0.5) 100%);
+            font-family: 'Roboto', sans-serif;
+            color: #fff;
+            padding: 20px;
+            overflow: auto;
+            position: relative;
+        }
+        .shape {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            bottom: -150px;
+            animation: float 10s infinite ease-in-out;
+            backdrop-filter: blur(5px);
+        }
+        .shape:nth-child(1) { left: 10%; animation-duration: 12s; }
+        .shape:nth-child(2) { left: 25%; animation-duration: 15s; }
+        .shape:nth-child(3) { left: 40%; animation-duration: 8s; }
+        .shape:nth-child(4) { left: 55%; animation-duration: 18s; }
+        .shape:nth-child(5) { left: 70%; animation-duration: 10s; }
+        .shape:nth-child(6) { left: 85%; animation-duration: 12s; }
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-1000px); }
+            100% { transform: translateY(0); }
+        }
+        .glass-effect {
+            background: rgba(0, 0, 50, 0.2);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .glass-effect:hover {
+            transform: scale(1.05);
+            background-color: rgba(0, 0, 50, 0.3);
+        }
+        .tender-item {
+            margin-bottom: 20px;
+        }
+        .btn-custom {
+            background-color: #28a745;
+            color: #fff;
+            border-color: #28a745;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .btn-custom:hover {
+            background-color: #218838;
+            transform: scale(1.1);
+        }
+        .nav-tabs .nav-link {
+            color: #28a745;
+            font-weight: 500;
+            border: none;
+        }
+        .nav-tabs .nav-link.active {
+            background-color: #28a745;
+            color: #fff;
+            border-radius: 10px;
+        }
+        .tab-content > .tab-pane {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .tab-content > .tab-pane.show {
+            display: block;
+            opacity: 1;
+        }
+        .container {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating shapes for background animation -->
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+
+    <div class="container">
+        <h1 class="text-center mb-4">Active Tenders</h1>
+        <!-- Tabs for Live and Archive -->
+        <ul class="nav nav-tabs justify-content-center mb-4" id="tenderTabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="live-tab" data-toggle="tab" href="#live" role="tab" aria-controls="live" aria-selected="true">Live</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="archive-tab" data-toggle="tab" href="#archive" role="tab" aria-controls="archive" aria-selected="false">Archive</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="tenderTabsContent">
+            <!-- Live Tab -->
+            <div class="tab-pane fade show active" id="live" role="tabpanel" aria-labelledby="live-tab">
+                <div class="glass-effect tender-item animate__animated animate__fadeInUp">
+                    <h3>Empanelment of TPA for Skill Development Training</h3>
+                    <a class="btn btn-custom animate__animated animate__pulse" href="https://wbtenders.gov.in/nicgep/app" target="_blank">Details</a>
+                </div>
+                <div class="glass-effect tender-item animate__animated animate__fadeInUp">
+                    <h3>Selection of Training Partner for Setting up, Operation and Maintenance for Multi Skill Development Center, Bathinda</h3>
+                    <a class="btn btn-custom animate__animated animate__pulse" href="https://www.tenderdetail.com/Indian-Tenders/TenderNotice/43817926/7BD940BF-935E-490D-AAC2-4C5E34751E60/144128/39581341/a3cf200b-d633-429c-af89-d5a1cff8e8b2" target="_blank">Details</a>
+                </div>
+                <div class="glass-effect tender-item animate__animated animate__fadeInUp">
+                    <h3>Tender For Empanelment Of Captive Employers/ Partners To Undertake Projects For Ddu-Gky Schemes Under Punjab Skill Development Mission</h3>
+                    <a class="btn btn-custom animate__animated animate__pulse" href="https://www.tenderdetail.com/Indian-Tenders/TenderNotice/43848753/4B9770DC-E077-4068-9ED3-363B4932B6DF/144128/39581341/a3cf200b-d633-429c-af89-d5a1cff8e8b2" target="_blank">Details</a>
+                </div>
+                <div class="glass-effect tender-item animate__animated animate__fadeInUp">
+                    <h3>Tender For Providing Training In Computer Course Module - I And Ii, Iv At I.M.T.I., Kota For One Year</h3>
+                    <a class="btn btn-custom animate__animated animate__pulse" href="https://www.tenderdetail.com/Indian-Tenders/TenderNotice/44271578/BC7E1AB6-4D9E-4B77-AA52-4DEB635FF3B5/144128/39601956/45d252f5-d870-4d2b-a3f3-990420b3fac1" target="_blank">Details</a>
+                </div>
+                <div class="glass-effect tender-item animate__animated animate__fadeInUp">
+                    <h3>Tender For Empanelment Of Training Providers Under Office Of The District Commissioner, Barpeta For Providing Training Under Skill Development Training Program As Part Of Aspirational District Program.</h3>
+                    <a class="btn btn-custom animate__animated animate__pulse" href="https://www.tenderdetail.com/Indian-Tenders/TenderNotice/44260790/2F5C1559-A365-48B8-8861-7FE2317DE339/144128/39601956/45d252f5-d870-4d2b-a3f3-990420b3fac1" target="_blank">Details</a>
+                </div>
+                <div class="glass-effect tender-item animate__animated animate__fadeInUp">
+                    <h3>Tender For Implement Skill Enhancement Training Schemes For Young Women / Women In Various Professions.(15 Days)</h3>
+                    <a class="btn btn-custom animate__animated animate__pulse" href="https://www.tenderdetail.com/Indian-Tenders/TenderNotice/44272068/533C2971-ACE4-4A33-904A-43324D7F5045/144128/39601956/45d252f5-d870-4d2b-a3f3-990420b3fac1" target="_blank">Details</a>
+                </div>
+                <div class="glass-effect tender-item animate__animated animate__fadeInUp">
+                <H3>Bids Are Invited For Custom Bid For Services - Support Services For Official Works - 2.2.1 The Scope Of Work Involved In General Shall Include But Not Limited To Following Activities, Any One From The Category Of Highly Skilled Will Also Perform The Role</H3>
+                <a class="btn btn-custom animate__animated animate__pulse" href="https://www.tenderdetail.com/Indian-Tenders/TenderNotice/44264233/BCE8DFAB-2812-404D-94E0-7D51F5EC0B56/144128/39601956/45d252f5-d870-4d2b-a3f3-990420b3fac1" target="_blank">Details</a>
+                </div>
+            </div>
+            <!-- Archive Tab -->
+            <div class="tab-pane fade" id="archive" role="tabpanel" aria-labelledby="archive-tab">
+                <!-- Example archived tender items -->
+                <div class="glass-effect tender-item animate__animated animate__fadeInUp">
+                    <h3>Archived Tender Example 1</h3>
+                    <a class="btn btn-custom animate__animated animate__pulse" href="#" target="_blank">Details</a>
+                </div>
+                <div class="glass-effect tender-item animate__animated animate__fadeInUp">
+                    <h3>Archived Tender Example 2</h3>
+                    <a class="btn btn-custom animate__animated animate__pulse" href="#" target="_blank">Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
