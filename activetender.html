@@ -15,7 +15,7 @@
     <!-- Custom CSS for background, animations, and transitions -->
     <style>
         body {
-            background: linear-gradient(135deg, rgba(0, 0, 50, 0.8) 0%, rgba(0, 0, 80, 0.5) 100%);
+            background: linear-gradient(135deg, rgba(0, 0, 50, 0.9) 0%, rgba(0, 0, 80, 0.7) 100%);
             font-family: 'Roboto', sans-serif;
             color: #fff;
             padding: 20px;
@@ -60,19 +60,26 @@
             margin-bottom: 20px;
         }
         .btn-custom {
-            background-color: #28a745;
+            background: linear-gradient(135deg, #28a745, #218838);
             color: #fff;
-            border-color: #28a745;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
         .btn-custom:hover {
-            background-color: #218838;
             transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
         }
         .nav-tabs .nav-link {
             color: #28a745;
             font-weight: 500;
             border: none;
+            transition: background-color 0.3s ease;
         }
         .nav-tabs .nav-link.active {
             background-color: #28a745;
@@ -91,6 +98,49 @@
         .container {
             position: relative;
             z-index: 1;
+        }
+        .table-container {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            transition: background-color 0.3s ease;
+        }
+        th {
+            background: linear-gradient(135deg, #28a745, #218838);
+            color: white;
+        }
+        tr {
+            position: relative;
+            transition: background-color 0.3s ease;
+        }
+        tr:hover {
+            background: rgba(0, 0, 0, 0.1);
+        }
+        .details-btn-container {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+            text-align: right;
+        }
+        td.details-btn-container {
+            text-align: center;
+            padding: 0;
+        }
+        tr:hover .details-btn-container {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .details-btn-container a {
+            display: inline-block;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -117,53 +167,149 @@
         <div class="tab-content" id="tenderTabsContent">
             <!-- Live Tab -->
             <div class="tab-pane fade show active" id="live" role="tabpanel" aria-labelledby="live-tab">
-                <div class="glass-effect tender-item animate__animated animate__fadeInUp">
-                    <h3>Empanelment of TPA for Skill Development Training</h3>
-                    <a class="btn btn-custom animate__animated animate__pulse" href="https://wbtenders.gov.in/nicgep/app" target="_blank">Details</a>
-                </div>
-                <div class="glass-effect tender-item animate__animated animate__fadeInUp">
-                    <h3>Selection of Training Partner for Setting up, Operation and Maintenance for Multi Skill Development Center, Bathinda</h3>
-                    <a class="btn btn-custom animate__animated animate__pulse" href="https://www.tenderdetail.com/Indian-Tenders/TenderNotice/43817926/7BD940BF-935E-490D-AAC2-4C5E34751E60/144128/39581341/a3cf200b-d633-429c-af89-d5a1cff8e8b2" target="_blank">Details</a>
-                </div>
-                <div class="glass-effect tender-item animate__animated animate__fadeInUp">
-                    <h3>Tender For Empanelment Of Captive Employers/ Partners To Undertake Projects For Ddu-Gky Schemes Under Punjab Skill Development Mission</h3>
-                    <a class="btn btn-custom animate__animated animate__pulse" href="https://www.tenderdetail.com/Indian-Tenders/TenderNotice/43848753/4B9770DC-E077-4068-9ED3-363B4932B6DF/144128/39581341/a3cf200b-d633-429c-af89-d5a1cff8e8b2" target="_blank">Details</a>
-                </div>
-                <div class="glass-effect tender-item animate__animated animate__fadeInUp">
-                    <h3>Tender For Providing Training In Computer Course Module - I And Ii, Iv At I.M.T.I., Kota For One Year</h3>
-                    <a class="btn btn-custom animate__animated animate__pulse" href="https://www.tenderdetail.com/Indian-Tenders/TenderNotice/44271578/BC7E1AB6-4D9E-4B77-AA52-4DEB635FF3B5/144128/39601956/45d252f5-d870-4d2b-a3f3-990420b3fac1" target="_blank">Details</a>
-                </div>
-                <div class="glass-effect tender-item animate__animated animate__fadeInUp">
-                    <h3>Tender For Empanelment Of Training Providers Under Office Of The District Commissioner, Barpeta For Providing Training Under Skill Development Training Program As Part Of Aspirational District Program.</h3>
-                    <a class="btn btn-custom animate__animated animate__pulse" href="https://www.tenderdetail.com/Indian-Tenders/TenderNotice/44260790/2F5C1559-A365-48B8-8861-7FE2317DE339/144128/39601956/45d252f5-d870-4d2b-a3f3-990420b3fac1" target="_blank">Details</a>
-                </div>
-                <div class="glass-effect tender-item animate__animated animate__fadeInUp">
-                    <h3>Tender For Implement Skill Enhancement Training Schemes For Young Women / Women In Various Professions.(15 Days)</h3>
-                    <a class="btn btn-custom animate__animated animate__pulse" href="https://www.tenderdetail.com/Indian-Tenders/TenderNotice/44272068/533C2971-ACE4-4A33-904A-43324D7F5045/144128/39601956/45d252f5-d870-4d2b-a3f3-990420b3fac1" target="_blank">Details</a>
-                </div>
-                <div class="glass-effect tender-item animate__animated animate__fadeInUp">
-                <H3>Bids Are Invited For Custom Bid For Services - Support Services For Official Works - 2.2.1 The Scope Of Work Involved In General Shall Include But Not Limited To Following Activities, Any One From The Category Of Highly Skilled Will Also Perform The Role</H3>
-                <a class="btn btn-custom animate__animated animate__pulse" href="https://www.tenderdetail.com/Indian-Tenders/TenderNotice/44264233/BCE8DFAB-2812-404D-94E0-7D51F5EC0B56/144128/39601956/45d252f5-d870-4d2b-a3f3-990420b3fac1" target="_blank">Details</a>
+                <div id="table-container" class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>SNO.</th>
+                                <th>STATE</th>
+                                <th>DEPARTMENT</th>
+                                <th>NAME OF TENDER</th>
+                                <th>Fee</th>
+                                <th>TENDER AMOUNT</th>
+                                <th>EMD</th>
+                                <th>Last Date</th>
+                                <th>Remarks</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>ASSAM</td>
+                                <td>ASSAM SKILL DEVELOPMENT MISSION</td>
+                                <td>Selection of Training Partner with Assam Skill Development Mission</td>
+                                <td>5000</td>
+                                <td>1.33 Crore</td>
+                                <td>270000</td>
+                                <td>2024-08-22</td>
+                                <td>RECRUITMENT AND TRAINING UNDER PM-AJAY SCHEME</td>
+                                <td class="details-btn-container">
+                                    <a class="btn btn-custom" href="https://www.tenderdetail.com/Indian-Tenders/TenderNotice/44271578/BC7E1AB6-4D9E-4B77-AA52-4DEB635FF3B5/144128/39601956/45d252f5-d870-4d2b-a3f3-990420b3fac1" target="_blank">Details</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Maharashtra</td>
+                                <td>Tribal Development Department</td>
+                                <td>Bids Are Invited For Professional Large Heavy Duty Photocopy Machine</td>
+                                <td>2000</td>
+                                <td>5.5 Lakh</td>
+                                <td>20000</td>
+                                <td>2024-08-22</td>
+                                <td>PROCUREMENT OF PHOTOCOPY MACHINES</td>
+                                <td class="details-btn-container">
+                                    <a class="btn btn-custom" href="https://www.tenderdetail.com/Indian-Tenders/TenderNotice/44262028/0248FA32-F1C2-4E73-BEC0-588C63E1F120/129803/39581923/1f2fa33b-1724-4294-8662-c92ebc9ba846" target="_blank">Details</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Gujarat</td>
+                                <td>Road And Building Department</td>
+                                <td>Bids Are Invited For Non Destructive Testing</td>
+                                <td>3000</td>
+                                <td>20 Lakh</td>
+                                <td>30000</td>
+                                <td>2024-08-20</td>
+                                <td>NDT FOR BUILDING STRUCTURES</td>
+                                <td class="details-btn-container">
+                                    <a class="btn btn-custom" href="https://www.tenderdetail.com/Indian-Tenders/TenderNotice/44262020/BC85E2B9-98A7-4B15-9223-F2B1B2F4C1DF/8950/39581915/13e2814f-1166-4b50-b27e-4e993b21e10e" target="_blank">Details</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
             <!-- Archive Tab -->
             <div class="tab-pane fade" id="archive" role="tabpanel" aria-labelledby="archive-tab">
-                <!-- Example archived tender items -->
-                <div class="glass-effect tender-item animate__animated animate__fadeInUp">
-                    <h3>Archived Tender Example 1</h3>
-                    <a class="btn btn-custom animate__animated animate__pulse" href="#" target="_blank">Details</a>
-                </div>
-                <div class="glass-effect tender-item animate__animated animate__fadeInUp">
-                    <h3>Archived Tender Example 2</h3>
-                    <a class="btn btn-custom animate__animated animate__pulse" href="#" target="_blank">Details</a>
+                <div id="table-container" class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>SNO.</th>
+                                <th>STATE</th>
+                                <th>DEPARTMENT</th>
+                                <th>NAME OF TENDER</th>
+                                <th>FEE</th>
+                                <th>TENDER AMOUNT</th>
+                                <th>EMD</th>
+                                <th>Last Date</th>
+                                <th>Remarks</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Kerala</td>
+                                <td>Health Department</td>
+                                <td>Supply of Medical Equipment</td>
+                                <td>4000</td>
+                                <td>2 Crore</td>
+                                <td>500000</td>
+                                <td>2023-12-12</td>
+                                <td>EQUIPMENT SUPPLY FOR HOSPITALS</td>
+                                <td class="details-btn-container">
+                                    <a class="btn btn-custom" href="https://www.tenderdetail.com/Indian-Tenders/TenderNotice/44271578/BC7E1AB6-4D9E-4B77-AA52-4DEB635FF3B5/144128/39601956/45d252f5-d870-4d2b-a3f3-990420b3fac1" target="_blank">Details</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Rajasthan</td>
+                                <td>Public Works Department</td>
+                                <td>Construction of New Roads</td>
+                                <td>6000</td>
+                                <td>5 Crore</td>
+                                <td>1000000</td>
+                                <td>2023-11-10</td>
+                                <td>ROAD CONSTRUCTION PROJECT</td>
+                                <td class="details-btn-container">
+                                    <a class="btn btn-custom" href="https://www.tenderdetail.com/Indian-Tenders/TenderNotice/44262028/0248FA32-F1C2-4E73-BEC0-588C63E1F120/129803/39581923/1f2fa33b-1724-4294-8662-c92ebc9ba846" target="_blank">Details</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Tamil Nadu</td>
+                                <td>Education Department</td>
+                                <td>Digital Classroom Setup</td>
+                                <td>5000</td>
+                                <td>1.5 Crore</td>
+                                <td>250000</td>
+                                <td>2023-10-15</td>
+                                <td>CLASSROOM DIGITALIZATION</td>
+                                <td class="details-btn-container">
+                                    <a class="btn btn-custom" href="https://www.tenderdetail.com/Indian-Tenders/TenderNotice/44262020/BC85E2B9-98A7-4B15-9223-F2B1B2F4C1DF/8950/39581915/13e2814f-1166-4b50-b27e-4e993b21e10e" target="_blank">Details</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Bootstrap JS and dependencies -->
+    <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Custom JS for animations -->
+    <script>
+        $(document).ready(function() {
+            $('#tenderTabs a').on('click', function (e) {
+                e.preventDefault();
+                $(this).tab('show');
+            });
+        });
+    </script>
 </body>
 </html>
